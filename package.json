@@ -1,0 +1,24 @@
+{
+  "name": "prakshal-digibulk",
+  "version": "1.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win nsis",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "in.prakshal.digibulk",
+    "productName": "Prakshal DigiBulk",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

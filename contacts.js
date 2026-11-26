@@ -1,0 +1,3 @@
+function normalize(value){const s=String(value).trim();if(!/^\+?[\d\s()-]+$/.test(s))return null;let n=s.replace(/\D/g,'');if(n.length===10)n='91'+n;return /^[1-9]\d{10,14}$/.test(n)?n:null}
+function eligible(rows,blocked=[]){const seen=new Set(blocked);return rows.flatMap(r=>{const mobile=normalize(r.mobile);if(!mobile||seen.has(mobile)||String(r.consent).trim().toLowerCase()!=='yes')return [];seen.add(mobile);return [{mobile,name:String(r.name||'')}]})}
+module.exports={normalize,eligible};
